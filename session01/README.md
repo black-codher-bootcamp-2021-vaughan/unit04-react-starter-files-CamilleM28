@@ -20,8 +20,14 @@
 - Add the following script tags to the [**index.html**](index.html) file:
 
 ```html
-<script src="https://unpkg.com/react@latest/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js" crossorigin></script>
+<script
+  src="https://unpkg.com/react@latest/umd/react.development.js"
+  crossorigin
+></script>
+<script
+  src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"
+  crossorigin
+></script>
 <script type="text/javascript" src="index.js"></script>
 ```
 
@@ -30,34 +36,34 @@
 - Add the following code to the [**index.js**](index.js) file:
 
 ```javascript
-'use strict';
+"use strict";
 
 function ClickButton() {
-
   const [clicked, setClick] = React.useState(false);
 
   if (clicked) {
-    return 'Nothing here yet! Change this text to add more info.';
+    return "Nothing here yet! Change this text to add more info.";
   }
 
   return React.createElement(
-    'button', {
-    style: {
-      backgroundColor: "#3392e4",
-      color: "#fff",
-      border: "0",
-      padding: "10px 20px",
-      fontWeight: "bold",
-      borderRadius: "5px",
-      fontSize: "1.1em"
+    "button",
+    {
+      style: {
+        backgroundColor: "#3392e4",
+        color: "#fff",
+        border: "0",
+        padding: "10px 20px",
+        fontWeight: "bold",
+        borderRadius: "5px",
+        fontSize: "1.1em",
+      },
+      onClick: () => setClick(true),
     },
-    onClick: () => setClick(true)
-  },
-    'Click To Reveal'
+    "Click To Reveal"
   );
 }
 
-const domContainer = document.querySelector('#root');
+const domContainer = document.querySelector("#root");
 ReactDOM.render(React.createElement(ClickButton), domContainer);
 ```
 
